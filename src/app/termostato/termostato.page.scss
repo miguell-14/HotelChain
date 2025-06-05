@@ -1,0 +1,66 @@
+.termostato-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 12px;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.form-section label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+}
+
+ion-select {
+  --padding-start: 12px;
+  --border-radius: 8px;
+  --border-color: #ccc;
+  --background: #fff;
+  border: 1px solid #ccc;
+}
+
+.room-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.room-card {
+  padding: 14px 16px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  color: #222;
+  transition: transform 0.2s ease;
+}
+
+.room-card:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.centered-title {
+  position: relative;
+  left: 68%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.custom-toolbar {
+  position: relative;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center; // garante centralização base
+}

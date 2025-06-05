@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="primary" class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="centered-title">Quartos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Segment para os andares -->
+  <ion-segment [(ngModel)]="andarSelecionado" color="primary" scrollable="true">
+
+    <ion-segment-button value="1">
+      <ion-label>1º Andar</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="2">
+      <ion-label>2º Andar</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="3">
+      <ion-label>3º Andar</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="4">
+      <ion-label>4º Andar</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <!-- Lista de quartos filtrados -->
+  <div *ngFor="let quarto of quartosFiltrados()" class="quarto-card">
+    <ion-card (click)="abrirAlterarQuartos(quarto)">
+      <ion-card-header>
+        <ion-card-title>{{ quarto.nome }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p *ngIf="quarto.estado === 'Livre'">Livre</p>
+        <p *ngIf="quarto.estado === 'Ocupado'">Ocupado por: {{ quarto.utilizador }}</p>
+        <p *ngIf="quarto.estado === 'Reservado'">Reservado por: {{ quarto.utilizador }}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+</ion-content>

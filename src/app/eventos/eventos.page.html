@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary" class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="centered-title">Eventos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list *ngIf="eventos.length > 0; else semEventos">
+    <ion-item-sliding *ngFor="let evento of eventos">
+      <ion-item [routerLink]="['/editar-evento', evento.id]">
+        <ion-label>
+          <h2>{{ evento.nome }}</h2>
+          <p>{{ evento.data }} - {{ evento.tipo }}</p>
+        </ion-label>
+      </ion-item>
+      <ion-item-options side="end">
+      </ion-item-options>
+    </ion-item-sliding>
+    
+    
+  </ion-list>
+
+  <ng-template #semEventos>
+    <ion-text color="medium">
+      <p class="ion-text-center">Ainda não existem eventos.</p>
+    </ion-text>
+  </ng-template>
+
+  <ion-button expand="block" routerLink="/criar-evento">Criar Novo Evento</ion-button>
+  
+</ion-content>

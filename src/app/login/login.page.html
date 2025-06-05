@@ -1,0 +1,23 @@
+<ion-content class="login-page">
+  <div class="login-container">
+    <h1 class="title">HotelChain</h1>
+
+    <div class="login-box">
+      <h2 class="login-heading">Entrar</h2>
+
+      <div class="form-box">
+        <div class="form-field">
+          <label for="email">Utilizador</label>
+          <ion-input id="email" class="custom-input" type="email" [(ngModel)]="user"></ion-input>
+        </div>
+
+        <div class="form-field">
+          <label for="password">Palavra-passe</label>
+          <ion-input id="password" class="custom-input" type="password" [(ngModel)]="password"></ion-input>
+        </div>
+
+        <ion-button expand="block" class="submit-button" (click)="login()">Continuar</ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>

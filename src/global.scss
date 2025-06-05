@@ -34,4 +34,37 @@
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import "@ionic/angular/css/palettes/dark.system.css";
+ /*@import "@ionic/angular/css/palettes/dark.system.css";*/
+
+
+ion-alert::part(backdrop),
+ion-picker::part(backdrop),
+ion-popover::part(backdrop) {
+    backdrop-filter: none !important;
+}
+
+:root {
+    color-scheme: light;
+    --ion-background-color: #ffffff;
+    --ion-text-color: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: light;
+        --ion-background-color: #ffffff;
+        --ion-text-color: #000000;
+    }
+}
+ion-content,
+ion-content::part(scroll),
+ion-content .inner-scroll {
+    --background: #ffffff !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+}
+
+body {
+    background: #ffffff !important;
+    color: #000000 !important;
+}

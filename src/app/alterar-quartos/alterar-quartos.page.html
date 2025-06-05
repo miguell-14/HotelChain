@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="primary" class="custom-toolbar">
+   <ion-title class="centered-title">Quartos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding" fullscreen>
+
+  <div class="form-wrapper" *ngIf="quarto">
+
+    <div class="form-group">
+      <label>Número do quarto</label>
+      <input type="text" [value]="quarto?.nome" readonly />
+    </div>
+
+<!-- Estado -->
+<div class="form-group">
+  <label for="estado">Estado</label>
+  <select id="estado" [(ngModel)]="quarto.estado">
+    <option value="Livre">Livre</option>
+    <option value="Ocupado">Ocupado</option>
+    <option value="Reservado">Reservado</option>
+  </select>
+</div>
+
+<!-- Ocupado -->
+<div class="form-group" *ngIf="quarto.estado === 'Ocupado'">
+  <label for="utilizador">Nome do Utilizador</label>
+  <input id="utilizador" type="text" [(ngModel)]="quarto.utilizador" />
+
+  <label for="dataCheckout">Data de Checkout</label>
+  <input id="dataCheckout" type="date" [(ngModel)]="quarto.dataCheckout" [min]="dataMinimaHoje" />
+
+</div>
+
+<!-- Reservado -->
+<div class="form-group" *ngIf="quarto.estado === 'Reservado'">
+  <label for="utilizador">Nome do Utilizador</label>
+  <input id="utilizador" type="text" [(ngModel)]="quarto.utilizador" />
+
+  <label for="dataCheckin">Data de Check-in</label>
+  <input id="dataCheckin" type="date" [(ngModel)]="quarto.dataCheckin" [min]="dataMinimaHoje" />
+
+  <label for="dataCheckoutReservado">Data de Checkout</label>
+  <input id="dataCheckoutReservado" type="date" [(ngModel)]="quarto.dataCheckout" [min]="dataMinimaHoje" />
+</div>
+
+
+<!-- Botões guardar e cancelar -->
+    <div class="button-row">
+      <button class="btn btn-primary" (click)="guardarAlteracoes()">Guardar</button>
+      <button class="btn btn-cancel" (click)="cancelar()">Cancelar</button>
+    </div>
+
+
+  </div>
+
+</ion-content>

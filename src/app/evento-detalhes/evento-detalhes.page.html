@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{evento?.nome}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="evento">
+    <ion-card-header>
+      <ion-card-title>{{evento.nome}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Tipo: {{evento.tipo}}</p>
+      <p>Data: {{evento.data | date}}</p>
+    </ion-card-content>
+    <ion-button expand="block" color="tertiary" [routerLink]="['/editar-evento', evento?.id]">
+      Editar Evento
+    </ion-button>    
+  </ion-card>
+</ion-content>

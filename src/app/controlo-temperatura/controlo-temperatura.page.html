@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary" class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+      <ion-back-button defaultHref="/termostato" text="" icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="centered-title">Termostato</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+  <div class="wrapper">
+    <h2 class="titulo-subzona">Mudar temperatura de: <strong>{{ subzona }}</strong></h2>
+
+    <div class="temp-control">
+      <ion-icon name="thermometer-outline" class="icon-large"></ion-icon>
+      <div class="temp-info">
+        <label class="label-grande">Temperatura:</label>
+        <p class="valor-temp">{{ temperatura }}º</p>
+        <ion-range min="16" max="30" step="1" [(ngModel)]="temperatura" (ionChange)="guardarTemperatura()" color="primary">
+        </ion-range>
+
+      </div>
+    </div>
+
+    <div class="ac-control">
+      <ion-icon name="snow-outline" class="icon-large"></ion-icon>
+      <label class="label-grande">Ar condicionado</label>
+      <ion-toggle [(ngModel)]="arCondicionado" (ionChange)="guardarAC()" color="success">
+      </ion-toggle>
+
+    </div>
+  </div>
+</ion-content>

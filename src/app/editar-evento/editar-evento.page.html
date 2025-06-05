@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar color="primary" class="custom-toolbar tall-toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="centered-title">Editar Evento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form (ngSubmit)="guardarAlteracoes()">
+
+    <!-- Etapa 1 -->
+    <div *ngIf="etapaAtual === 1">
+      <ion-item>
+        <ion-label>Local do Evento</ion-label>
+        <ion-select [(ngModel)]="evento.area" name="area" required>
+          <ion-select-option value="Sala 1">Sala 1</ion-select-option>
+          <ion-select-option value="Sala 2">Sala 2</ion-select-option>
+          <ion-select-option value="Auditório 1">Auditório 1</ion-select-option>
+          <ion-select-option value="Auditório 2">Auditório 2</ion-select-option>
+        </ion-select>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating">Tipo de Evento</ion-label>
+        <ion-input [(ngModel)]="evento.tipo" name="tipo" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Nome do Evento</ion-label>
+        <ion-input [(ngModel)]="evento.nome" name="nome" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Público-Alvo</ion-label>
+        <ion-input [(ngModel)]="evento.publicoAlvo" name="publicoAlvo"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"></ion-label>
+        <ion-datetime presentation="date-time" [(ngModel)]="evento.dataHora" name="dataHora" required></ion-datetime>
+      </ion-item>
+
+      <ion-button expand="block" (click)="proximaEtapa()">Continuar</ion-button>
+      <ion-button expand="block" color="danger" (click)="eliminarEvento()">Eliminar Evento</ion-button>
+    </div>
+
+    <!-- Etapa 2 -->
+    <div *ngIf="etapaAtual === 2">
+      <ion-item>
+        <ion-label position="floating">Descrição do Evento</ion-label>
+        <ion-textarea [(ngModel)]="evento.descricao" name="descricao"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Material Necessário</ion-label>
+        <ion-textarea [(ngModel)]="evento.material" name="material"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Nº Estimado de Participantes</ion-label>
+        <ion-input type="number" [(ngModel)]="evento.participantes" name="participantes"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" (click)="etapaAnterior()">Voltar</ion-button>
+      <ion-button expand="block" (click)="proximaEtapa()">Continuar</ion-button>
+    </div>
+
+    <!-- Etapa 3 -->
+    <div *ngIf="etapaAtual === 3">
+      <ion-item>
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input [(ngModel)]="evento.nomeContacto" name="nomeContacto" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Apelido</ion-label>
+        <ion-input [(ngModel)]="evento.apelidoContacto" name="apelidoContacto" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Telefone</ion-label>
+        <ion-input type="tel" [(ngModel)]="evento.telefone" name="telefone" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" [(ngModel)]="evento.email" name="email" required></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" (click)="etapaAnterior()">Voltar</ion-button>
+      <ion-button expand="block" type="submit">Guardar Alterações</ion-button>
+      
+    </div>
+
+  </form>
+</ion-content>

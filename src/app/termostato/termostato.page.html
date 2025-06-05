@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary" class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="centered-title">Termostato</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="termostato-container">
+
+    <!-- Seleção de zona -->
+    <div class="form-section">
+      <label>Zona</label>
+      <ion-select [(ngModel)]="zonaSelecionada" placeholder="Escolher zona" (ionChange)="onZonaSelecionada()">
+        <ion-select-option *ngFor="let zona of zonas" [value]="zona">{{ zona }}</ion-select-option>
+      </ion-select>
+    </div>
+
+    <!-- Seleção de andar -->
+    <div class="form-section" *ngIf="zonaSelecionada === 'Dormitório'">
+      <label>Andar</label>
+      <ion-select [(ngModel)]="andarSelecionado" placeholder="Escolher andar" (ionChange)="onAndarSelecionado()">
+        <ion-select-option *ngFor="let andar of andares" [value]="andar">{{ andar }}</ion-select-option>
+      </ion-select>
+    </div>
+
+    <!-- Lista de subzonas -->
+    <div class="room-list" *ngIf="subzonas.length > 0">
+      <div class="room-card" *ngFor="let subzona of subzonas" (click)="abrirControloTemperatura(subzona)">
+        {{ subzona }}
+      </div>
+    </div>
+
+  </div>
+</ion-content>

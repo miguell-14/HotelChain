@@ -1,0 +1,14 @@
+[
+  { "id": "101", "nome": "Quarto 101", "andar": "1", "estado": "Livre", "utilizador": "" },
+  { "id": "102", "nome": "Quarto 102", "andar": "1", "estado": "Livre", "utilizador": "" },
+  { "id": "103", "nome": "Quarto 103", "andar": "1", "estado": "Livre", "utilizador": "" },
+  { "id": "201", "nome": "Quarto 201", "andar": "2", "estado": "Livre", "utilizador": "" },
+  { "id": "202", "nome": "Quarto 202", "andar": "2", "estado": "Livre", "utilizador": "" },
+  { "id": "203", "nome": "Quarto 203", "andar": "2", "estado": "Livre", "utilizador": "" },
+  { "id": "301", "nome": "Quarto 301", "andar": "3", "estado": "Livre", "utilizador": "" },
+  { "id": "302", "nome": "Quarto 302", "andar": "3", "estado": "Livre", "utilizador": "" },
+  { "id": "303", "nome": "Quarto 303", "andar": "3", "estado": "Livre", "utilizador": "" },
+  { "id": "401", "nome": "Quarto 401", "andar": "4", "estado": "Livre", "utilizador": "" },
+  { "id": "402", "nome": "Quarto 402", "andar": "4", "estado": "Livre", "utilizador": "" },
+  { "id": "403", "nome": "Quarto 403", "andar": "4", "estado": "Livre", "utilizador": "" }
+]
