@@ -1,23 +1,45 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary" class="custom-toolbar">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button defaultHref="/eventos"></ion-back-button>
     </ion-buttons>
-    <ion-title>{{evento?.nome}}</ion-title>
+    <ion-title class="centered-title">Detalhes do Evento</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-card *ngIf="evento">
+<ion-content *ngIf="evento" class="ion-padding">
+  <ion-card>
     <ion-card-header>
-      <ion-card-title>{{evento.nome}}</ion-card-title>
+      <ion-card-title>{{ evento.nome }}</ion-card-title>
+      <ion-card-subtitle>
+        <ion-icon name="calendar-outline" class="icon-label"></ion-icon>
+        {{ evento.dataHora }}
+      </ion-card-subtitle>
     </ion-card-header>
+
     <ion-card-content>
-      <p>Tipo: {{evento.tipo}}</p>
-      <p>Data: {{evento.data | date}}</p>
+      <p><ion-icon name="location-outline" class="icon-label"></ion-icon> <strong>Local:</strong> {{ evento.local }}</p>
+      <p><ion-icon name="albums-outline" class="icon-label"></ion-icon> <strong>Tipo:</strong> {{ evento.tipo }}</p>
+      <p><ion-icon name="people-outline" class="icon-label"></ion-icon> <strong>Público Alvo:</strong> {{ evento.publicoAlvo }}</p>
+      <p><ion-icon name="document-text-outline" class="icon-label"></ion-icon> <strong>Descrição:</strong> {{ evento.descricao }}</p>
+      <p><ion-icon name="construct-outline" class="icon-label"></ion-icon> <strong>Material Necessário:</strong> {{ evento.material }}</p>
+      <p><ion-icon name="person-add-outline" class="icon-label"></ion-icon> <strong>Nº Estimado de Participantes:</strong> {{ evento.participantes }}</p>
+     
+      <hr class="separador" />
+
+      <p><ion-icon name="person-outline" class="icon-label"></ion-icon> <strong>Nome do responsável:</strong> {{ evento.nomeContacto }} {{ evento.apelidoContacto }}</p>
+      <p><ion-icon name="call-outline" class="icon-label"></ion-icon> <strong>Telefone:</strong> {{ evento.telefone }}</p>
+      <p><ion-icon name="mail-outline" class="icon-label"></ion-icon> <strong>Email:</strong> {{ evento.email }}</p>
     </ion-card-content>
-    <ion-button expand="block" color="tertiary" [routerLink]="['/editar-evento', evento?.id]">
-      Editar Evento
-    </ion-button>    
   </ion-card>
+
+  <div class="botao-stack">
+    <ion-button color="primary" expand="block" (click)="editarEvento()">
+      <ion-icon name="create-outline" slot="start" class="icon-label"></ion-icon>
+      Editar
+    </ion-button>
+    <ion-button color="danger" expand="block" (click)="eliminarEvento()">
+      Eliminar
+    </ion-button>
+  </div>
 </ion-content>

@@ -42,8 +42,13 @@ const routes: Routes = [
   {
     path: 'editar-evento/:id',
     loadChildren: () => import('./editar-evento/editar-evento.module').then(m => m.EditarEventoPageModule)
-  }
-  
+  },
+  {
+  path: 'evento-detalhes/:id',
+  loadChildren: () => import('./evento-detalhes/evento-detalhes.module').then(m => m.EventoDetalhesPageModule)
+}
+
+
 ];
 
 @NgModule({

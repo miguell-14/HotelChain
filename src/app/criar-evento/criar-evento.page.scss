@@ -1,25 +1,53 @@
-.custom-toolbar {
-    --padding-start : 0;
-    --padding-end: 0;
-    min-height: 80px !important;
-    display: flex;
-}
-
 .centered-title {
-  position: absolute !important;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  text-align: center !important;
+  text-align: center;
   font-size: 22px;
   font-weight: bold;
   display: flex;
-}
-ion-item {
-  margin-bottom: 12px;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; 
 }
 
+/* ---------- BASE: todos os botões ---------- */
 ion-button {
-  margin-top: 20px;
+  margin-top: 12px;
+  font-weight: 500;
+  border-radius: 12px;
+  --border-radius: 12px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+  --box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- Botão Voltar ---------- */
+ion-button.voltar {
+  --background: grey;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- Botão Cancelar ---------- */
+ion-button.cancelar {
+  --background: #ff4d4d;
+  --color: white;
+  box-shadow: none;
+}
+
+/* ---------- Layout extra (opcional) ---------- */
+.botao-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.botoes-centrados {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
