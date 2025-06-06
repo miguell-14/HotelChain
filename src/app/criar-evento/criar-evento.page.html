@@ -10,6 +10,18 @@
   </ion-toolbar>
 </ion-header>
 
+
+<div class="etiquetas-etapas">
+  <span [class.ativa]="etapaAtual === 1">Informações</span>
+  <span [class.ativa]="etapaAtual === 2">Detalhes</span>
+  <span [class.ativa]="etapaAtual === 3">Contacto</span>
+</div>
+
+<div class="barra-progresso-container">
+  <div class="barra-progresso" [style.width.%]="etapaAtual * 33.33"></div>
+</div>
+
+
 <ion-content class="ion-padding">
   <form (ngSubmit)="guardarEvento()">
 

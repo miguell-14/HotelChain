@@ -1,11 +1,4 @@
-.centered-title{
-    position: relative;
-    left: 57%;
-    transform: translateX(-50%);
-    font-size: 24px;
-    font-weight: bold;  
-    color: white;
-}
+
 .wrapper {
     padding: 24px;
 }
@@ -49,20 +42,4 @@
     transform: scale(1.5);
     margin-left: 16px;
 }
-.custom-toolbar {
-    position: relative;
-    min-height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center; // garante centralização base
-}
 
-.toolbar-title {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    pointer-events: none; // impede clique
-}

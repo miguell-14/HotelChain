@@ -48,19 +48,3 @@ ion-select {
   cursor: pointer;
 }
 
-.centered-title {
-  position: relative;
-  left: 68%;
-  transform: translateX(-50%);
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-}
-
-.custom-toolbar {
-  position: relative;
-  min-height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center; // garante centralização base
-}

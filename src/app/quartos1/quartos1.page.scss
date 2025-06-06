@@ -2,11 +2,6 @@ ion-segment-button {
   color: #000 !important; // Texto preto nos não selecionados
 }
 
-.custom-toolbar {
-    min-height: 80px !important;
-    display: flex;
-    align-items: center;
-}
 
 .quarto-card {
   margin-bottom: 15px;
@@ -17,14 +12,6 @@ ion-card {
   border-radius: 12px;
 }
 
-.centered-title {
-  position: relative;
-  left: 74%;
-  transform: translateX(-50%);
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-}
 
 ion-segment-button {
   min-width: max-content;
